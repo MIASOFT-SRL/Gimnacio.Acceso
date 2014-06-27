@@ -1,0 +1,886 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbControlAccesoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbControlAccesoModelStoreContainer">
+          <EntitySet Name="AttParam" EntityType="dbControlAccesoModel.Store.AttParam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CHECKEXACT" EntityType="dbControlAccesoModel.Store.CHECKEXACT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CHECKINOUT" EntityType="dbControlAccesoModel.Store.CHECKINOUT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DEPARTMENTS" EntityType="dbControlAccesoModel.Store.DEPARTMENTS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HOLIDAYS" EntityType="dbControlAccesoModel.Store.HOLIDAYS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LeaveClass" EntityType="dbControlAccesoModel.Store.LeaveClass" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LeaveClass1" EntityType="dbControlAccesoModel.Store.LeaveClass1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NUM_RUN" EntityType="dbControlAccesoModel.Store.NUM_RUN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NUM_RUN_DEIL" EntityType="dbControlAccesoModel.Store.NUM_RUN_DEIL" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SchClass" EntityType="dbControlAccesoModel.Store.SchClass" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SECURITYDETAILS" EntityType="dbControlAccesoModel.Store.SECURITYDETAILS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SHIFT" EntityType="dbControlAccesoModel.Store.SHIFT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TEMPLATE" EntityType="dbControlAccesoModel.Store.TEMPLATE" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USER_OF_RUN" EntityType="dbControlAccesoModel.Store.USER_OF_RUN" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USER_SPEDAY" EntityType="dbControlAccesoModel.Store.USER_SPEDAY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USER_TEMP_SCH" EntityType="dbControlAccesoModel.Store.USER_TEMP_SCH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USERINFO" EntityType="dbControlAccesoModel.Store.USERINFO" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AttParam">
+          <Key>
+            <PropertyRef Name="PARANAME" />
+          </Key>
+          <Property Name="PARANAME" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PARATYPE" Type="varchar" MaxLength="2" />
+          <Property Name="PARAVALUE" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CHECKEXACT">
+          <Key>
+            <PropertyRef Name="EXACTID" />
+          </Key>
+          <Property Name="EXACTID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="CHECKTIME" Type="datetime" />
+          <Property Name="CHECKTYPE" Type="varchar" MaxLength="2" />
+          <Property Name="ISADD" Type="smallint" />
+          <Property Name="YUYIN" Type="varchar" MaxLength="25" />
+          <Property Name="ISMODIFY" Type="smallint" />
+          <Property Name="ISDELETE" Type="smallint" />
+          <Property Name="INCOUNT" Type="smallint" />
+          <Property Name="ISCOUNT" Type="smallint" />
+          <Property Name="MODIFYBY" Type="varchar" MaxLength="20" />
+          <Property Name="DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CHECKINOUT">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="CHECKTIME" />
+          </Key>
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="CHECKTIME" Type="datetime" Nullable="false" />
+          <Property Name="CHECKTYPE" Type="varchar" MaxLength="1" />
+          <Property Name="VERIFYCODE" Type="int" />
+          <Property Name="SENSORID" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="DEPARTMENTS">
+          <Key>
+            <PropertyRef Name="DEPTID" />
+          </Key>
+          <Property Name="DEPTID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DEPTNAME" Type="varchar" MaxLength="30" />
+          <Property Name="SUPDEPTID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOLIDAYS">
+          <Key>
+            <PropertyRef Name="HOLIDAYID" />
+          </Key>
+          <Property Name="HOLIDAYID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HOLIDAYNAME" Type="varchar" MaxLength="20" />
+          <Property Name="HOLIDAYYEAR" Type="smallint" />
+          <Property Name="HOLIDAYMONTH" Type="smallint" />
+          <Property Name="HOLIDAYDAY" Type="smallint" />
+          <Property Name="STARTTIME" Type="datetime" />
+          <Property Name="DURATION" Type="smallint" />
+          <Property Name="HOLIDAYTYPE" Type="smallint" />
+          <Property Name="XINBIE" Type="varchar" MaxLength="4" />
+          <Property Name="MINZU" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LeaveClass">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LeaveName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="MinUnit" Type="float" Nullable="false" />
+          <Property Name="Unit" Type="smallint" Nullable="false" />
+          <Property Name="RemaindProc" Type="smallint" Nullable="false" />
+          <Property Name="RemaindCount" Type="smallint" Nullable="false" />
+          <Property Name="ReportSymbol" Type="varchar" Nullable="false" MaxLength="4" />
+          <Property Name="Deduct" Type="float" Nullable="false" />
+          <Property Name="Color" Type="int" Nullable="false" />
+          <Property Name="Classify" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LeaveClass1">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LeaveName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="MinUnit" Type="float" Nullable="false" />
+          <Property Name="Unit" Type="smallint" Nullable="false" />
+          <Property Name="RemaindProc" Type="smallint" Nullable="false" />
+          <Property Name="RemaindCount" Type="smallint" Nullable="false" />
+          <Property Name="ReportSymbol" Type="varchar" Nullable="false" MaxLength="4" />
+          <Property Name="Deduct" Type="float" Nullable="false" />
+          <Property Name="LeaveType" Type="smallint" Nullable="false" />
+          <Property Name="Color" Type="int" Nullable="false" />
+          <Property Name="Classify" Type="smallint" Nullable="false" />
+          <Property Name="Calc" Type="text" />
+        </EntityType>
+        <EntityType Name="NUM_RUN">
+          <Key>
+            <PropertyRef Name="NUM_RUNID" />
+          </Key>
+          <Property Name="NUM_RUNID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OLDID" Type="int" />
+          <Property Name="NAME" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="STARTDATE" Type="datetime" />
+          <Property Name="ENDDATE" Type="datetime" />
+          <Property Name="CYLE" Type="smallint" />
+          <Property Name="UNITS" Type="smallint" />
+        </EntityType>
+        <EntityType Name="NUM_RUN_DEIL">
+          <Key>
+            <PropertyRef Name="NUM_RUNID" />
+            <PropertyRef Name="STARTTIME" />
+            <PropertyRef Name="SDAYS" />
+          </Key>
+          <Property Name="NUM_RUNID" Type="smallint" Nullable="false" />
+          <Property Name="STARTTIME" Type="datetime" Nullable="false" />
+          <Property Name="ENDTIME" Type="datetime" />
+          <Property Name="SDAYS" Type="smallint" Nullable="false" />
+          <Property Name="EDAYS" Type="smallint" />
+          <Property Name="SCHCLASSID" Type="int" />
+        </EntityType>
+        <EntityType Name="SchClass">
+          <Key>
+            <PropertyRef Name="schClassid" />
+          </Key>
+          <Property Name="schClassid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="schName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="LateMinutes" Type="int" />
+          <Property Name="EarlyMinutes" Type="int" />
+          <Property Name="CheckIn" Type="int" />
+          <Property Name="CheckOut" Type="int" />
+          <Property Name="CheckInTime1" Type="datetime" />
+          <Property Name="CheckInTime2" Type="datetime" />
+          <Property Name="CheckOutTime1" Type="datetime" />
+          <Property Name="CheckOutTime2" Type="datetime" />
+          <Property Name="Color" Type="int" />
+          <Property Name="AutoBind" Type="smallint" />
+        </EntityType>
+        <EntityType Name="SECURITYDETAILS">
+          <Key>
+            <PropertyRef Name="SECURITYDETAILID" />
+          </Key>
+          <Property Name="SECURITYDETAILID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="smallint" />
+          <Property Name="DEPTID" Type="smallint" />
+          <Property Name="SCHEDULE" Type="smallint" />
+          <Property Name="USERINFO" Type="smallint" />
+          <Property Name="ENROLLFINGERS" Type="smallint" />
+          <Property Name="REPORTVIEW" Type="smallint" />
+          <Property Name="REPORT" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SHIFT">
+          <Key>
+            <PropertyRef Name="SHIFTID" />
+          </Key>
+          <Property Name="SHIFTID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" />
+          <Property Name="USHIFTID" Type="int" />
+          <Property Name="STARTDATE" Type="datetime" Nullable="false" />
+          <Property Name="ENDDATE" Type="datetime" />
+          <Property Name="RUNNUM" Type="smallint" />
+          <Property Name="SCH1" Type="int" />
+          <Property Name="SCH2" Type="int" />
+          <Property Name="SCH3" Type="int" />
+          <Property Name="SCH4" Type="int" />
+          <Property Name="SCH5" Type="int" />
+          <Property Name="SCH6" Type="int" />
+          <Property Name="SCH7" Type="int" />
+          <Property Name="SCH8" Type="int" />
+          <Property Name="SCH9" Type="int" />
+          <Property Name="SCH10" Type="int" />
+          <Property Name="SCH11" Type="int" />
+          <Property Name="SCH12" Type="int" />
+          <Property Name="CYCLE" Type="smallint" />
+          <Property Name="UNITS" Type="smallint" />
+        </EntityType>
+        <EntityType Name="TEMPLATE">
+          <Key>
+            <PropertyRef Name="TEMPLATEID" />
+          </Key>
+          <Property Name="TEMPLATEID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="FINGERID" Type="int" Nullable="false" />
+          <Property Name="TEMPLATE" Type="image" Nullable="false" />
+          <Property Name="TEMPLATE2" Type="image" />
+          <Property Name="TEMPLATE3" Type="image" />
+          <Property Name="BITMAPPICTURE" Type="image" />
+          <Property Name="BITMAPPICTURE2" Type="image" />
+          <Property Name="BITMAPPICTURE3" Type="image" />
+          <Property Name="BITMAPPICTURE4" Type="image" />
+          <Property Name="USETYPE" Type="smallint" />
+        </EntityType>
+        <EntityType Name="USER_OF_RUN">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="NUM_OF_RUN_ID" />
+            <PropertyRef Name="STARTDATE" />
+            <PropertyRef Name="ENDDATE" />
+          </Key>
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="NUM_OF_RUN_ID" Type="int" Nullable="false" />
+          <Property Name="STARTDATE" Type="datetime" Nullable="false" />
+          <Property Name="ENDDATE" Type="datetime" Nullable="false" />
+          <Property Name="ISNOTOF_RUN" Type="int" />
+          <Property Name="ORDER_RUN" Type="int" />
+        </EntityType>
+        <EntityType Name="USER_SPEDAY">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="STARTSPECDAY" />
+            <PropertyRef Name="DATEID" />
+          </Key>
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="STARTSPECDAY" Type="datetime" Nullable="false" />
+          <Property Name="ENDSPECDAY" Type="datetime" />
+          <Property Name="DATEID" Type="smallint" Nullable="false" />
+          <Property Name="YUANYING" Type="varchar" MaxLength="200" />
+          <Property Name="DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USER_TEMP_SCH">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="COMETIME" />
+            <PropertyRef Name="LEAVETIME" />
+          </Key>
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="COMETIME" Type="datetime" Nullable="false" />
+          <Property Name="LEAVETIME" Type="datetime" Nullable="false" />
+          <Property Name="OVERTIME" Type="int" Nullable="false" />
+          <Property Name="TYPE" Type="smallint" />
+          <Property Name="FLAG" Type="smallint" />
+          <Property Name="SCHCLASSID" Type="int" />
+        </EntityType>
+        <EntityType Name="USERINFO">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BADGENUMBER" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="SSN" Type="varchar" MaxLength="20" />
+          <Property Name="NAME" Type="varchar" MaxLength="20" />
+          <Property Name="GENDER" Type="varchar" MaxLength="2" />
+          <Property Name="TITLE" Type="varchar" MaxLength="20" />
+          <Property Name="PAGER" Type="varchar" MaxLength="20" />
+          <Property Name="BIRTHDAY" Type="datetime" />
+          <Property Name="HIREDDAY" Type="datetime" />
+          <Property Name="STREET" Type="varchar" MaxLength="40" />
+          <Property Name="CITY" Type="varchar" MaxLength="2" />
+          <Property Name="STATE" Type="varchar" MaxLength="2" />
+          <Property Name="ZIP" Type="varchar" MaxLength="12" />
+          <Property Name="OPHONE" Type="varchar" MaxLength="20" />
+          <Property Name="FPHONE" Type="varchar" MaxLength="20" />
+          <Property Name="VERIFICATIONMETHOD" Type="smallint" />
+          <Property Name="DEFAULTDEPTID" Type="smallint" />
+          <Property Name="SECURITYFLAGS" Type="smallint" />
+          <Property Name="ATT" Type="smallint" Nullable="false" />
+          <Property Name="INLATE" Type="smallint" Nullable="false" />
+          <Property Name="OUTEARLY" Type="smallint" Nullable="false" />
+          <Property Name="OVERTIME" Type="smallint" Nullable="false" />
+          <Property Name="SEP" Type="smallint" Nullable="false" />
+          <Property Name="HOLIDAY" Type="smallint" Nullable="false" />
+          <Property Name="MINZU" Type="varchar" MaxLength="8" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="20" />
+          <Property Name="LUNCHDURATION" Type="smallint" Nullable="false" />
+          <Property Name="MVerifyPass" Type="varchar" MaxLength="10" />
+          <Property Name="PHOTO" Type="image" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6013: La tabla o vista 'dbControlAcceso.dbo.EXCNOTES' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+      
+      <EntityType Name="EXCNOTES">
+        <Property Name="USERID" Type="int" />
+        <Property Name="ATTDATE" Type="datetime" />
+        <Property Name="NOTES" Type="varchar" MaxLength="200" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbControlAccesoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dbControlAccesoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AttParam" EntityType="dbControlAccesoModel.AttParam" />
+          <EntitySet Name="CHECKEXACT" EntityType="dbControlAccesoModel.CHECKEXACT" />
+          <EntitySet Name="CHECKINOUT" EntityType="dbControlAccesoModel.CHECKINOUT" />
+          <EntitySet Name="DEPARTMENTS" EntityType="dbControlAccesoModel.DEPARTMENTS" />
+          <EntitySet Name="HOLIDAYS" EntityType="dbControlAccesoModel.HOLIDAYS" />
+          <EntitySet Name="LeaveClass" EntityType="dbControlAccesoModel.LeaveClass" />
+          <EntitySet Name="LeaveClass1" EntityType="dbControlAccesoModel.LeaveClass1" />
+          <EntitySet Name="NUM_RUN" EntityType="dbControlAccesoModel.NUM_RUN" />
+          <EntitySet Name="NUM_RUN_DEIL" EntityType="dbControlAccesoModel.NUM_RUN_DEIL" />
+          <EntitySet Name="SchClass" EntityType="dbControlAccesoModel.SchClass" />
+          <EntitySet Name="SECURITYDETAILS" EntityType="dbControlAccesoModel.SECURITYDETAILS" />
+          <EntitySet Name="SHIFT" EntityType="dbControlAccesoModel.SHIFT" />
+          <EntitySet Name="TEMPLATE" EntityType="dbControlAccesoModel.TEMPLATE" />
+          <EntitySet Name="USER_OF_RUN" EntityType="dbControlAccesoModel.USER_OF_RUN" />
+          <EntitySet Name="USER_SPEDAY" EntityType="dbControlAccesoModel.USER_SPEDAY" />
+          <EntitySet Name="USER_TEMP_SCH" EntityType="dbControlAccesoModel.USER_TEMP_SCH" />
+          <EntitySet Name="USERINFO" EntityType="dbControlAccesoModel.USERINFO" />
+        </EntityContainer>
+        <EntityType Name="AttParam">
+          <Key>
+            <PropertyRef Name="PARANAME" />
+          </Key>
+          <Property Name="PARANAME" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PARATYPE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="PARAVALUE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CHECKEXACT">
+          <Key>
+            <PropertyRef Name="EXACTID" />
+          </Key>
+          <Property Name="EXACTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="CHECKTIME" Type="DateTime" Precision="3" />
+          <Property Name="CHECKTYPE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="ISADD" Type="Int16" />
+          <Property Name="YUYIN" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="ISMODIFY" Type="Int16" />
+          <Property Name="ISDELETE" Type="Int16" />
+          <Property Name="INCOUNT" Type="Int16" />
+          <Property Name="ISCOUNT" Type="Int16" />
+          <Property Name="MODIFYBY" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CHECKINOUT">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="CHECKTIME" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="CHECKTIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CHECKTYPE" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFYCODE" Type="Int32" />
+          <Property Name="SENSORID" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DEPARTMENTS">
+          <Key>
+            <PropertyRef Name="DEPTID" />
+          </Key>
+          <Property Name="DEPTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPTNAME" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="SUPDEPTID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOLIDAYS">
+          <Key>
+            <PropertyRef Name="HOLIDAYID" />
+          </Key>
+          <Property Name="HOLIDAYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOLIDAYNAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="HOLIDAYYEAR" Type="Int16" />
+          <Property Name="HOLIDAYMONTH" Type="Int16" />
+          <Property Name="HOLIDAYDAY" Type="Int16" />
+          <Property Name="STARTTIME" Type="DateTime" Precision="3" />
+          <Property Name="DURATION" Type="Int16" />
+          <Property Name="HOLIDAYTYPE" Type="Int16" />
+          <Property Name="XINBIE" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="MINZU" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LeaveClass">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeaveName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MinUnit" Type="Double" Nullable="false" />
+          <Property Name="Unit" Type="Int16" Nullable="false" />
+          <Property Name="RemaindProc" Type="Int16" Nullable="false" />
+          <Property Name="RemaindCount" Type="Int16" Nullable="false" />
+          <Property Name="ReportSymbol" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="Deduct" Type="Double" Nullable="false" />
+          <Property Name="Color" Type="Int32" Nullable="false" />
+          <Property Name="Classify" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LeaveClass1">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeaveName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MinUnit" Type="Double" Nullable="false" />
+          <Property Name="Unit" Type="Int16" Nullable="false" />
+          <Property Name="RemaindProc" Type="Int16" Nullable="false" />
+          <Property Name="RemaindCount" Type="Int16" Nullable="false" />
+          <Property Name="ReportSymbol" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="Deduct" Type="Double" Nullable="false" />
+          <Property Name="LeaveType" Type="Int16" Nullable="false" />
+          <Property Name="Color" Type="Int32" Nullable="false" />
+          <Property Name="Classify" Type="Int16" Nullable="false" />
+          <Property Name="Calc" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="NUM_RUN">
+          <Key>
+            <PropertyRef Name="NUM_RUNID" />
+          </Key>
+          <Property Name="NUM_RUNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OLDID" Type="Int32" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="STARTDATE" Type="DateTime" Precision="3" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="3" />
+          <Property Name="CYLE" Type="Int16" />
+          <Property Name="UNITS" Type="Int16" />
+        </EntityType>
+        <EntityType Name="NUM_RUN_DEIL">
+          <Key>
+            <PropertyRef Name="NUM_RUNID" />
+            <PropertyRef Name="STARTTIME" />
+            <PropertyRef Name="SDAYS" />
+          </Key>
+          <Property Name="NUM_RUNID" Type="Int16" Nullable="false" />
+          <Property Name="STARTTIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ENDTIME" Type="DateTime" Precision="3" />
+          <Property Name="SDAYS" Type="Int16" Nullable="false" />
+          <Property Name="EDAYS" Type="Int16" />
+          <Property Name="SCHCLASSID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SchClass">
+          <Key>
+            <PropertyRef Name="schClassid" />
+          </Key>
+          <Property Name="schClassid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="schName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LateMinutes" Type="Int32" />
+          <Property Name="EarlyMinutes" Type="Int32" />
+          <Property Name="CheckIn" Type="Int32" />
+          <Property Name="CheckOut" Type="Int32" />
+          <Property Name="CheckInTime1" Type="DateTime" Precision="3" />
+          <Property Name="CheckInTime2" Type="DateTime" Precision="3" />
+          <Property Name="CheckOutTime1" Type="DateTime" Precision="3" />
+          <Property Name="CheckOutTime2" Type="DateTime" Precision="3" />
+          <Property Name="Color" Type="Int32" />
+          <Property Name="AutoBind" Type="Int16" />
+        </EntityType>
+        <EntityType Name="SECURITYDETAILS">
+          <Key>
+            <PropertyRef Name="SECURITYDETAILID" />
+          </Key>
+          <Property Name="SECURITYDETAILID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int16" />
+          <Property Name="DEPTID" Type="Int16" />
+          <Property Name="SCHEDULE" Type="Int16" />
+          <Property Name="USERINFO" Type="Int16" />
+          <Property Name="ENROLLFINGERS" Type="Int16" />
+          <Property Name="REPORTVIEW" Type="Int16" />
+          <Property Name="REPORT" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SHIFT">
+          <Key>
+            <PropertyRef Name="SHIFTID" />
+          </Key>
+          <Property Name="SHIFTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="USHIFTID" Type="Int32" />
+          <Property Name="STARTDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ENDDATE" Type="DateTime" Precision="3" />
+          <Property Name="RUNNUM" Type="Int16" />
+          <Property Name="SCH1" Type="Int32" />
+          <Property Name="SCH2" Type="Int32" />
+          <Property Name="SCH3" Type="Int32" />
+          <Property Name="SCH4" Type="Int32" />
+          <Property Name="SCH5" Type="Int32" />
+          <Property Name="SCH6" Type="Int32" />
+          <Property Name="SCH7" Type="Int32" />
+          <Property Name="SCH8" Type="Int32" />
+          <Property Name="SCH9" Type="Int32" />
+          <Property Name="SCH10" Type="Int32" />
+          <Property Name="SCH11" Type="Int32" />
+          <Property Name="SCH12" Type="Int32" />
+          <Property Name="CYCLE" Type="Int16" />
+          <Property Name="UNITS" Type="Int16" />
+        </EntityType>
+        <EntityType Name="TEMPLATE">
+          <Key>
+            <PropertyRef Name="TEMPLATEID" />
+          </Key>
+          <Property Name="TEMPLATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="FINGERID" Type="Int32" Nullable="false" />
+          <Property Name="TEMPLATE1" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="TEMPLATE2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TEMPLATE3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="BITMAPPICTURE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="BITMAPPICTURE2" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="BITMAPPICTURE3" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="BITMAPPICTURE4" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="USETYPE" Type="Int16" />
+        </EntityType>
+        <EntityType Name="USER_OF_RUN">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="NUM_OF_RUN_ID" />
+            <PropertyRef Name="STARTDATE" />
+            <PropertyRef Name="ENDDATE" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="NUM_OF_RUN_ID" Type="Int32" Nullable="false" />
+          <Property Name="STARTDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ENDDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ISNOTOF_RUN" Type="Int32" />
+          <Property Name="ORDER_RUN" Type="Int32" />
+        </EntityType>
+        <EntityType Name="USER_SPEDAY">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="STARTSPECDAY" />
+            <PropertyRef Name="DATEID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="STARTSPECDAY" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ENDSPECDAY" Type="DateTime" Precision="3" />
+          <Property Name="DATEID" Type="Int16" Nullable="false" />
+          <Property Name="YUANYING" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="USER_TEMP_SCH">
+          <Key>
+            <PropertyRef Name="USERID" />
+            <PropertyRef Name="COMETIME" />
+            <PropertyRef Name="LEAVETIME" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="COMETIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LEAVETIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OVERTIME" Type="Int32" Nullable="false" />
+          <Property Name="TYPE" Type="Int16" />
+          <Property Name="FLAG" Type="Int16" />
+          <Property Name="SCHCLASSID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="USERINFO">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BADGENUMBER" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="SSN" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="GENDER" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="TITLE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PAGER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BIRTHDAY" Type="DateTime" Precision="3" />
+          <Property Name="HIREDDAY" Type="DateTime" Precision="3" />
+          <Property Name="STREET" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="CITY" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="STATE" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="ZIP" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="OPHONE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="FPHONE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VERIFICATIONMETHOD" Type="Int16" />
+          <Property Name="DEFAULTDEPTID" Type="Int16" />
+          <Property Name="SECURITYFLAGS" Type="Int16" />
+          <Property Name="ATT" Type="Int16" Nullable="false" />
+          <Property Name="INLATE" Type="Int16" Nullable="false" />
+          <Property Name="OUTEARLY" Type="Int16" Nullable="false" />
+          <Property Name="OVERTIME" Type="Int16" Nullable="false" />
+          <Property Name="SEP" Type="Int16" Nullable="false" />
+          <Property Name="HOLIDAY" Type="Int16" Nullable="false" />
+          <Property Name="MINZU" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LUNCHDURATION" Type="Int16" Nullable="false" />
+          <Property Name="MVerifyPass" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PHOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbControlAccesoModelStoreContainer" CdmEntityContainer="dbControlAccesoEntities">
+          <EntitySetMapping Name="AttParam">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.AttParam">
+              <MappingFragment StoreEntitySet="AttParam">
+                <ScalarProperty Name="PARANAME" ColumnName="PARANAME" />
+                <ScalarProperty Name="PARATYPE" ColumnName="PARATYPE" />
+                <ScalarProperty Name="PARAVALUE" ColumnName="PARAVALUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHECKEXACT">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.CHECKEXACT">
+              <MappingFragment StoreEntitySet="CHECKEXACT">
+                <ScalarProperty Name="EXACTID" ColumnName="EXACTID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="CHECKTIME" ColumnName="CHECKTIME" />
+                <ScalarProperty Name="CHECKTYPE" ColumnName="CHECKTYPE" />
+                <ScalarProperty Name="ISADD" ColumnName="ISADD" />
+                <ScalarProperty Name="YUYIN" ColumnName="YUYIN" />
+                <ScalarProperty Name="ISMODIFY" ColumnName="ISMODIFY" />
+                <ScalarProperty Name="ISDELETE" ColumnName="ISDELETE" />
+                <ScalarProperty Name="INCOUNT" ColumnName="INCOUNT" />
+                <ScalarProperty Name="ISCOUNT" ColumnName="ISCOUNT" />
+                <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHECKINOUT">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.CHECKINOUT">
+              <MappingFragment StoreEntitySet="CHECKINOUT">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="CHECKTIME" ColumnName="CHECKTIME" />
+                <ScalarProperty Name="CHECKTYPE" ColumnName="CHECKTYPE" />
+                <ScalarProperty Name="VERIFYCODE" ColumnName="VERIFYCODE" />
+                <ScalarProperty Name="SENSORID" ColumnName="SENSORID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEPARTMENTS">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.DEPARTMENTS">
+              <MappingFragment StoreEntitySet="DEPARTMENTS">
+                <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+                <ScalarProperty Name="DEPTNAME" ColumnName="DEPTNAME" />
+                <ScalarProperty Name="SUPDEPTID" ColumnName="SUPDEPTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOLIDAYS">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.HOLIDAYS">
+              <MappingFragment StoreEntitySet="HOLIDAYS">
+                <ScalarProperty Name="HOLIDAYID" ColumnName="HOLIDAYID" />
+                <ScalarProperty Name="HOLIDAYNAME" ColumnName="HOLIDAYNAME" />
+                <ScalarProperty Name="HOLIDAYYEAR" ColumnName="HOLIDAYYEAR" />
+                <ScalarProperty Name="HOLIDAYMONTH" ColumnName="HOLIDAYMONTH" />
+                <ScalarProperty Name="HOLIDAYDAY" ColumnName="HOLIDAYDAY" />
+                <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+                <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+                <ScalarProperty Name="HOLIDAYTYPE" ColumnName="HOLIDAYTYPE" />
+                <ScalarProperty Name="XINBIE" ColumnName="XINBIE" />
+                <ScalarProperty Name="MINZU" ColumnName="MINZU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveClass">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.LeaveClass">
+              <MappingFragment StoreEntitySet="LeaveClass">
+                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+                <ScalarProperty Name="LeaveName" ColumnName="LeaveName" />
+                <ScalarProperty Name="MinUnit" ColumnName="MinUnit" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="RemaindProc" ColumnName="RemaindProc" />
+                <ScalarProperty Name="RemaindCount" ColumnName="RemaindCount" />
+                <ScalarProperty Name="ReportSymbol" ColumnName="ReportSymbol" />
+                <ScalarProperty Name="Deduct" ColumnName="Deduct" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Classify" ColumnName="Classify" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeaveClass1">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.LeaveClass1">
+              <MappingFragment StoreEntitySet="LeaveClass1">
+                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+                <ScalarProperty Name="LeaveName" ColumnName="LeaveName" />
+                <ScalarProperty Name="MinUnit" ColumnName="MinUnit" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="RemaindProc" ColumnName="RemaindProc" />
+                <ScalarProperty Name="RemaindCount" ColumnName="RemaindCount" />
+                <ScalarProperty Name="ReportSymbol" ColumnName="ReportSymbol" />
+                <ScalarProperty Name="Deduct" ColumnName="Deduct" />
+                <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Classify" ColumnName="Classify" />
+                <ScalarProperty Name="Calc" ColumnName="Calc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NUM_RUN">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.NUM_RUN">
+              <MappingFragment StoreEntitySet="NUM_RUN">
+                <ScalarProperty Name="NUM_RUNID" ColumnName="NUM_RUNID" />
+                <ScalarProperty Name="OLDID" ColumnName="OLDID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="CYLE" ColumnName="CYLE" />
+                <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NUM_RUN_DEIL">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.NUM_RUN_DEIL">
+              <MappingFragment StoreEntitySet="NUM_RUN_DEIL">
+                <ScalarProperty Name="NUM_RUNID" ColumnName="NUM_RUNID" />
+                <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+                <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+                <ScalarProperty Name="SDAYS" ColumnName="SDAYS" />
+                <ScalarProperty Name="EDAYS" ColumnName="EDAYS" />
+                <ScalarProperty Name="SCHCLASSID" ColumnName="SCHCLASSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchClass">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.SchClass">
+              <MappingFragment StoreEntitySet="SchClass">
+                <ScalarProperty Name="schClassid" ColumnName="schClassid" />
+                <ScalarProperty Name="schName" ColumnName="schName" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="LateMinutes" ColumnName="LateMinutes" />
+                <ScalarProperty Name="EarlyMinutes" ColumnName="EarlyMinutes" />
+                <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+                <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+                <ScalarProperty Name="CheckInTime1" ColumnName="CheckInTime1" />
+                <ScalarProperty Name="CheckInTime2" ColumnName="CheckInTime2" />
+                <ScalarProperty Name="CheckOutTime1" ColumnName="CheckOutTime1" />
+                <ScalarProperty Name="CheckOutTime2" ColumnName="CheckOutTime2" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="AutoBind" ColumnName="AutoBind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SECURITYDETAILS">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.SECURITYDETAILS">
+              <MappingFragment StoreEntitySet="SECURITYDETAILS">
+                <ScalarProperty Name="SECURITYDETAILID" ColumnName="SECURITYDETAILID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+                <ScalarProperty Name="SCHEDULE" ColumnName="SCHEDULE" />
+                <ScalarProperty Name="USERINFO" ColumnName="USERINFO" />
+                <ScalarProperty Name="ENROLLFINGERS" ColumnName="ENROLLFINGERS" />
+                <ScalarProperty Name="REPORTVIEW" ColumnName="REPORTVIEW" />
+                <ScalarProperty Name="REPORT" ColumnName="REPORT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SHIFT">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.SHIFT">
+              <MappingFragment StoreEntitySet="SHIFT">
+                <ScalarProperty Name="SHIFTID" ColumnName="SHIFTID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="USHIFTID" ColumnName="USHIFTID" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="RUNNUM" ColumnName="RUNNUM" />
+                <ScalarProperty Name="SCH1" ColumnName="SCH1" />
+                <ScalarProperty Name="SCH2" ColumnName="SCH2" />
+                <ScalarProperty Name="SCH3" ColumnName="SCH3" />
+                <ScalarProperty Name="SCH4" ColumnName="SCH4" />
+                <ScalarProperty Name="SCH5" ColumnName="SCH5" />
+                <ScalarProperty Name="SCH6" ColumnName="SCH6" />
+                <ScalarProperty Name="SCH7" ColumnName="SCH7" />
+                <ScalarProperty Name="SCH8" ColumnName="SCH8" />
+                <ScalarProperty Name="SCH9" ColumnName="SCH9" />
+                <ScalarProperty Name="SCH10" ColumnName="SCH10" />
+                <ScalarProperty Name="SCH11" ColumnName="SCH11" />
+                <ScalarProperty Name="SCH12" ColumnName="SCH12" />
+                <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+                <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEMPLATE">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.TEMPLATE">
+              <MappingFragment StoreEntitySet="TEMPLATE">
+                <ScalarProperty Name="TEMPLATEID" ColumnName="TEMPLATEID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="FINGERID" ColumnName="FINGERID" />
+                <ScalarProperty Name="TEMPLATE1" ColumnName="TEMPLATE" />
+                <ScalarProperty Name="TEMPLATE2" ColumnName="TEMPLATE2" />
+                <ScalarProperty Name="TEMPLATE3" ColumnName="TEMPLATE3" />
+                <ScalarProperty Name="BITMAPPICTURE" ColumnName="BITMAPPICTURE" />
+                <ScalarProperty Name="BITMAPPICTURE2" ColumnName="BITMAPPICTURE2" />
+                <ScalarProperty Name="BITMAPPICTURE3" ColumnName="BITMAPPICTURE3" />
+                <ScalarProperty Name="BITMAPPICTURE4" ColumnName="BITMAPPICTURE4" />
+                <ScalarProperty Name="USETYPE" ColumnName="USETYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_OF_RUN">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.USER_OF_RUN">
+              <MappingFragment StoreEntitySet="USER_OF_RUN">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="NUM_OF_RUN_ID" ColumnName="NUM_OF_RUN_ID" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="ISNOTOF_RUN" ColumnName="ISNOTOF_RUN" />
+                <ScalarProperty Name="ORDER_RUN" ColumnName="ORDER_RUN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_SPEDAY">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.USER_SPEDAY">
+              <MappingFragment StoreEntitySet="USER_SPEDAY">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="STARTSPECDAY" ColumnName="STARTSPECDAY" />
+                <ScalarProperty Name="ENDSPECDAY" ColumnName="ENDSPECDAY" />
+                <ScalarProperty Name="DATEID" ColumnName="DATEID" />
+                <ScalarProperty Name="YUANYING" ColumnName="YUANYING" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_TEMP_SCH">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.USER_TEMP_SCH">
+              <MappingFragment StoreEntitySet="USER_TEMP_SCH">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="COMETIME" ColumnName="COMETIME" />
+                <ScalarProperty Name="LEAVETIME" ColumnName="LEAVETIME" />
+                <ScalarProperty Name="OVERTIME" ColumnName="OVERTIME" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="SCHCLASSID" ColumnName="SCHCLASSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERINFO">
+            <EntityTypeMapping TypeName="dbControlAccesoModel.USERINFO">
+              <MappingFragment StoreEntitySet="USERINFO">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="BADGENUMBER" ColumnName="BADGENUMBER" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="PAGER" ColumnName="PAGER" />
+                <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+                <ScalarProperty Name="HIREDDAY" ColumnName="HIREDDAY" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="OPHONE" ColumnName="OPHONE" />
+                <ScalarProperty Name="FPHONE" ColumnName="FPHONE" />
+                <ScalarProperty Name="VERIFICATIONMETHOD" ColumnName="VERIFICATIONMETHOD" />
+                <ScalarProperty Name="DEFAULTDEPTID" ColumnName="DEFAULTDEPTID" />
+                <ScalarProperty Name="SECURITYFLAGS" ColumnName="SECURITYFLAGS" />
+                <ScalarProperty Name="ATT" ColumnName="ATT" />
+                <ScalarProperty Name="INLATE" ColumnName="INLATE" />
+                <ScalarProperty Name="OUTEARLY" ColumnName="OUTEARLY" />
+                <ScalarProperty Name="OVERTIME" ColumnName="OVERTIME" />
+                <ScalarProperty Name="SEP" ColumnName="SEP" />
+                <ScalarProperty Name="HOLIDAY" ColumnName="HOLIDAY" />
+                <ScalarProperty Name="MINZU" ColumnName="MINZU" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="LUNCHDURATION" ColumnName="LUNCHDURATION" />
+                <ScalarProperty Name="MVerifyPass" ColumnName="MVerifyPass" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

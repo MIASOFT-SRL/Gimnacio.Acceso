@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbControlAccesoModelStoreContainer" CdmEntityContainer="dbControlAccesoEntities">
+    <EntitySetMapping Name="AttParam">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.AttParam">
+        <MappingFragment StoreEntitySet="AttParam">
+          <ScalarProperty Name="PARANAME" ColumnName="PARANAME" />
+          <ScalarProperty Name="PARATYPE" ColumnName="PARATYPE" />
+          <ScalarProperty Name="PARAVALUE" ColumnName="PARAVALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHECKEXACT">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.CHECKEXACT">
+        <MappingFragment StoreEntitySet="CHECKEXACT">
+          <ScalarProperty Name="EXACTID" ColumnName="EXACTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CHECKTIME" ColumnName="CHECKTIME" />
+          <ScalarProperty Name="CHECKTYPE" ColumnName="CHECKTYPE" />
+          <ScalarProperty Name="ISADD" ColumnName="ISADD" />
+          <ScalarProperty Name="YUYIN" ColumnName="YUYIN" />
+          <ScalarProperty Name="ISMODIFY" ColumnName="ISMODIFY" />
+          <ScalarProperty Name="ISDELETE" ColumnName="ISDELETE" />
+          <ScalarProperty Name="INCOUNT" ColumnName="INCOUNT" />
+          <ScalarProperty Name="ISCOUNT" ColumnName="ISCOUNT" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHECKINOUT">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.CHECKINOUT">
+        <MappingFragment StoreEntitySet="CHECKINOUT">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CHECKTIME" ColumnName="CHECKTIME" />
+          <ScalarProperty Name="CHECKTYPE" ColumnName="CHECKTYPE" />
+          <ScalarProperty Name="VERIFYCODE" ColumnName="VERIFYCODE" />
+          <ScalarProperty Name="SENSORID" ColumnName="SENSORID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTMENTS">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.DEPARTMENTS">
+        <MappingFragment StoreEntitySet="DEPARTMENTS">
+          <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+          <ScalarProperty Name="DEPTNAME" ColumnName="DEPTNAME" />
+          <ScalarProperty Name="SUPDEPTID" ColumnName="SUPDEPTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOLIDAYS">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.HOLIDAYS">
+        <MappingFragment StoreEntitySet="HOLIDAYS">
+          <ScalarProperty Name="HOLIDAYID" ColumnName="HOLIDAYID" />
+          <ScalarProperty Name="HOLIDAYNAME" ColumnName="HOLIDAYNAME" />
+          <ScalarProperty Name="HOLIDAYYEAR" ColumnName="HOLIDAYYEAR" />
+          <ScalarProperty Name="HOLIDAYMONTH" ColumnName="HOLIDAYMONTH" />
+          <ScalarProperty Name="HOLIDAYDAY" ColumnName="HOLIDAYDAY" />
+          <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+          <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+          <ScalarProperty Name="HOLIDAYTYPE" ColumnName="HOLIDAYTYPE" />
+          <ScalarProperty Name="XINBIE" ColumnName="XINBIE" />
+          <ScalarProperty Name="MINZU" ColumnName="MINZU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveClass">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.LeaveClass">
+        <MappingFragment StoreEntitySet="LeaveClass">
+          <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+          <ScalarProperty Name="LeaveName" ColumnName="LeaveName" />
+          <ScalarProperty Name="MinUnit" ColumnName="MinUnit" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="RemaindProc" ColumnName="RemaindProc" />
+          <ScalarProperty Name="RemaindCount" ColumnName="RemaindCount" />
+          <ScalarProperty Name="ReportSymbol" ColumnName="ReportSymbol" />
+          <ScalarProperty Name="Deduct" ColumnName="Deduct" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Classify" ColumnName="Classify" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveClass1">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.LeaveClass1">
+        <MappingFragment StoreEntitySet="LeaveClass1">
+          <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+          <ScalarProperty Name="LeaveName" ColumnName="LeaveName" />
+          <ScalarProperty Name="MinUnit" ColumnName="MinUnit" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="RemaindProc" ColumnName="RemaindProc" />
+          <ScalarProperty Name="RemaindCount" ColumnName="RemaindCount" />
+          <ScalarProperty Name="ReportSymbol" ColumnName="ReportSymbol" />
+          <ScalarProperty Name="Deduct" ColumnName="Deduct" />
+          <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Classify" ColumnName="Classify" />
+          <ScalarProperty Name="Calc" ColumnName="Calc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NUM_RUN">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.NUM_RUN">
+        <MappingFragment StoreEntitySet="NUM_RUN">
+          <ScalarProperty Name="NUM_RUNID" ColumnName="NUM_RUNID" />
+          <ScalarProperty Name="OLDID" ColumnName="OLDID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="CYLE" ColumnName="CYLE" />
+          <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NUM_RUN_DEIL">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.NUM_RUN_DEIL">
+        <MappingFragment StoreEntitySet="NUM_RUN_DEIL">
+          <ScalarProperty Name="NUM_RUNID" ColumnName="NUM_RUNID" />
+          <ScalarProperty Name="STARTTIME" ColumnName="STARTTIME" />
+          <ScalarProperty Name="ENDTIME" ColumnName="ENDTIME" />
+          <ScalarProperty Name="SDAYS" ColumnName="SDAYS" />
+          <ScalarProperty Name="EDAYS" ColumnName="EDAYS" />
+          <ScalarProperty Name="SCHCLASSID" ColumnName="SCHCLASSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchClass">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.SchClass">
+        <MappingFragment StoreEntitySet="SchClass">
+          <ScalarProperty Name="schClassid" ColumnName="schClassid" />
+          <ScalarProperty Name="schName" ColumnName="schName" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="LateMinutes" ColumnName="LateMinutes" />
+          <ScalarProperty Name="EarlyMinutes" ColumnName="EarlyMinutes" />
+          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+          <ScalarProperty Name="CheckInTime1" ColumnName="CheckInTime1" />
+          <ScalarProperty Name="CheckInTime2" ColumnName="CheckInTime2" />
+          <ScalarProperty Name="CheckOutTime1" ColumnName="CheckOutTime1" />
+          <ScalarProperty Name="CheckOutTime2" ColumnName="CheckOutTime2" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="AutoBind" ColumnName="AutoBind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SECURITYDETAILS">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.SECURITYDETAILS">
+        <MappingFragment StoreEntitySet="SECURITYDETAILS">
+          <ScalarProperty Name="SECURITYDETAILID" ColumnName="SECURITYDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="DEPTID" ColumnName="DEPTID" />
+          <ScalarProperty Name="SCHEDULE" ColumnName="SCHEDULE" />
+          <ScalarProperty Name="USERINFO" ColumnName="USERINFO" />
+          <ScalarProperty Name="ENROLLFINGERS" ColumnName="ENROLLFINGERS" />
+          <ScalarProperty Name="REPORTVIEW" ColumnName="REPORTVIEW" />
+          <ScalarProperty Name="REPORT" ColumnName="REPORT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHIFT">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.SHIFT">
+        <MappingFragment StoreEntitySet="SHIFT">
+          <ScalarProperty Name="SHIFTID" ColumnName="SHIFTID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="USHIFTID" ColumnName="USHIFTID" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="RUNNUM" ColumnName="RUNNUM" />
+          <ScalarProperty Name="SCH1" ColumnName="SCH1" />
+          <ScalarProperty Name="SCH2" ColumnName="SCH2" />
+          <ScalarProperty Name="SCH3" ColumnName="SCH3" />
+          <ScalarProperty Name="SCH4" ColumnName="SCH4" />
+          <ScalarProperty Name="SCH5" ColumnName="SCH5" />
+          <ScalarProperty Name="SCH6" ColumnName="SCH6" />
+          <ScalarProperty Name="SCH7" ColumnName="SCH7" />
+          <ScalarProperty Name="SCH8" ColumnName="SCH8" />
+          <ScalarProperty Name="SCH9" ColumnName="SCH9" />
+          <ScalarProperty Name="SCH10" ColumnName="SCH10" />
+          <ScalarProperty Name="SCH11" ColumnName="SCH11" />
+          <ScalarProperty Name="SCH12" ColumnName="SCH12" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEMPLATE">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.TEMPLATE">
+        <MappingFragment StoreEntitySet="TEMPLATE">
+          <ScalarProperty Name="TEMPLATEID" ColumnName="TEMPLATEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FINGERID" ColumnName="FINGERID" />
+          <ScalarProperty Name="TEMPLATE1" ColumnName="TEMPLATE" />
+          <ScalarProperty Name="TEMPLATE2" ColumnName="TEMPLATE2" />
+          <ScalarProperty Name="TEMPLATE3" ColumnName="TEMPLATE3" />
+          <ScalarProperty Name="BITMAPPICTURE" ColumnName="BITMAPPICTURE" />
+          <ScalarProperty Name="BITMAPPICTURE2" ColumnName="BITMAPPICTURE2" />
+          <ScalarProperty Name="BITMAPPICTURE3" ColumnName="BITMAPPICTURE3" />
+          <ScalarProperty Name="BITMAPPICTURE4" ColumnName="BITMAPPICTURE4" />
+          <ScalarProperty Name="USETYPE" ColumnName="USETYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_OF_RUN">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.USER_OF_RUN">
+        <MappingFragment StoreEntitySet="USER_OF_RUN">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="NUM_OF_RUN_ID" ColumnName="NUM_OF_RUN_ID" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="ISNOTOF_RUN" ColumnName="ISNOTOF_RUN" />
+          <ScalarProperty Name="ORDER_RUN" ColumnName="ORDER_RUN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_SPEDAY">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.USER_SPEDAY">
+        <MappingFragment StoreEntitySet="USER_SPEDAY">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="STARTSPECDAY" ColumnName="STARTSPECDAY" />
+          <ScalarProperty Name="ENDSPECDAY" ColumnName="ENDSPECDAY" />
+          <ScalarProperty Name="DATEID" ColumnName="DATEID" />
+          <ScalarProperty Name="YUANYING" ColumnName="YUANYING" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_TEMP_SCH">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.USER_TEMP_SCH">
+        <MappingFragment StoreEntitySet="USER_TEMP_SCH">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COMETIME" ColumnName="COMETIME" />
+          <ScalarProperty Name="LEAVETIME" ColumnName="LEAVETIME" />
+          <ScalarProperty Name="OVERTIME" ColumnName="OVERTIME" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="SCHCLASSID" ColumnName="SCHCLASSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERINFO">
+      <EntityTypeMapping TypeName="dbControlAccesoModel.USERINFO">
+        <MappingFragment StoreEntitySet="USERINFO">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="BADGENUMBER" ColumnName="BADGENUMBER" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="PAGER" ColumnName="PAGER" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="HIREDDAY" ColumnName="HIREDDAY" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="OPHONE" ColumnName="OPHONE" />
+          <ScalarProperty Name="FPHONE" ColumnName="FPHONE" />
+          <ScalarProperty Name="VERIFICATIONMETHOD" ColumnName="VERIFICATIONMETHOD" />
+          <ScalarProperty Name="DEFAULTDEPTID" ColumnName="DEFAULTDEPTID" />
+          <ScalarProperty Name="SECURITYFLAGS" ColumnName="SECURITYFLAGS" />
+          <ScalarProperty Name="ATT" ColumnName="ATT" />
+          <ScalarProperty Name="INLATE" ColumnName="INLATE" />
+          <ScalarProperty Name="OUTEARLY" ColumnName="OUTEARLY" />
+          <ScalarProperty Name="OVERTIME" ColumnName="OVERTIME" />
+          <ScalarProperty Name="SEP" ColumnName="SEP" />
+          <ScalarProperty Name="HOLIDAY" ColumnName="HOLIDAY" />
+          <ScalarProperty Name="MINZU" ColumnName="MINZU" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="LUNCHDURATION" ColumnName="LUNCHDURATION" />
+          <ScalarProperty Name="MVerifyPass" ColumnName="MVerifyPass" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
